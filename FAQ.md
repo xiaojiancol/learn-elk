@@ -1,1 +1,5 @@
-1. https://www.elastic.co/subscriptions 收费情况
+# 概述
+
+1. 怎么检查filebeat是否正常工作，以及每一个模块是否正常工作
+
+2. 为什么有时候使用官方release会报错，能否用二进制的方式安装
