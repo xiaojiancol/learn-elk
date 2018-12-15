@@ -54,3 +54,23 @@
 ## Putting it Together in a Dashboard
 
 ## Wrapping Up
+
+# Discovery
+
+# Visualize
+
+## 创建可视化
+
+## 折线图、柱状图
+
+## 控制可视化
+
+## 数据表
+
+## Markdown widget
+
+## 度量
+
+## Goal and Gauge 目标和仪表盘
+
+## Pie Charts
