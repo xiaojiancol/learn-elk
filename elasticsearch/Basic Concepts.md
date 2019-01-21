@@ -14,4 +14,12 @@ Elasticsearch是一个近乎实时的搜索平台。这意味着从索引文档�
 
 请注意，拥有一个只包含单个节点的集群是完全正常的。此外，您还可以拥有多个独立的集群，每个集群都有自己唯一的集群名称。
 
-## Node
+- Cluster  
+- Node  
+- Index是一个数据库  
+- Type是一个表  
+- Document是一条记录  
+- Filed是一个字段  
+- Term是一个分词  
+
+- Shards & Replicas  
