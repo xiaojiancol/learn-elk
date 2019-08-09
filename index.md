@@ -30,32 +30,6 @@ Elastic Stack
 Elasticsearch: Store, Search, and Analyze
 
 ### Elasticsearch Reference [7.3] — other versions
-#### Elasticsearch introduction
-#### Getting started with Elasticsearch
-#### Set up Elasticsearch
-#### Upgrade Elasticsearch
-#### Aggregations
-#### Query DSL
-#### Scripting
-#### Mapping
-#### Analysis
-#### Modules
-#### Index modules
-#### Ingest node
-#### Managing the index lifecycle
-#### SQL access
-#### Monitoring Elasticsearch
-#### Rolling up historical data
-#### Frozen indices
-#### Administering Elasticsearch
-#### Command line tools
-#### How To
-#### Testing
-#### Glossary of terms
-#### REST APIs
-#### Release highlights
-#### Breaking changes
-#### Release notes
 ### Elasticsearch Resiliency Status
 ### Painless Scripting Language [7.3] — other versions
 ### Plugins and Integrations [7.3] — other versions
