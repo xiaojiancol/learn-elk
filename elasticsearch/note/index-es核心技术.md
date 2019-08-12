@@ -1,36 +1,82 @@
 
+## 第一章 概述
 
-### 01
+### 01 介绍
+### 02 内容综述
+### 03 ES发展历史
+### 04 ES stack 及其 应用场景
 
-### 02
+## 第二章 安装上手
 
-### 03
+### 05 安装配置  
 
-### 04
+- 最好不要在机器上设置 JDK
+- 启动之前打开配置文件  
+- 启动多个节点
 
-### 05
+### 06 kibana 安装和界面浏览
 
-### 06
+- dashboard
+- 插件安装
 
-### 07
-
-### 08
+### 07 docker 运行 elk
+### 08 logstash 导入测试数据集
 
 ## 第三章 ES 入门
 
 ### 09 索引/文档/mapping/setting
 
+CVS 在导入的时候，被自动的做了序列化，格式是 JSON，类型采用了推断方式，Mapping也是 Dynamic Mapping  
+setting 定义分片  
+Mapping 定义索引结构  
+索引相当于表，节点相当于库，分片相当于分库分表，  
+
+
 ### 10 可用性 / 扩展性
 
 集群/ 节点即实例(uid) master eligible / 
 
-data 节点，负责保存分片数据 / coordinating 节点，默认都是 coordinating  
+- master节点管理状态 ，每个节点可以保存状态 
+- 副本分片数量是可以调整的，那么不一致的话会怎样？  
+- data 节点，负责保存分片数据 / coordinating 节点，默认都是 coordinating  
 
 分片（扩展性？） 主分片 副本分片（高可用）  
-
-
+默认一个节点一个分片，那么增加节点是不能提高可用性的，一个节点多个分片，
+因为不同同学的情况不一样，比如有人 996 有人 995 有人 885 ，那么学习速度是不一致的
 
 ### 11 CURD
+
+#### 简单操作
+
+- index  
+  put my_index/_doc/1  
+  {body}  
+  这个操作是先删除再新建，具有幂等性,但是版本会增加  
+- create  
+  自己指定ID
+  PUT my_index/_create/1  
+  PUT my_index/_doc/1?op_type=create
+  {body}
+  或者自动生成ID
+  POST my_index/_doc
+  {body}
+- read  
+  GET my_index/_doc/id
+- update
+  POST my_index/_update/id  
+  {body}  
+  这个操作是直接更新  
+- delete
+  DELETE my_index/_doc/id
+
+#### 批量操作
+
+- Bulk API  
+- mget
+- msearch ？
+- mmatch
+
+bug 率，以及合理度的控制，比如真的有大佬讲的让人云里雾里，不一定要
 
 ### 12 倒排索引
 
@@ -53,11 +99,20 @@ analyzer
 
 ### 18 Dynamic mapping
 
-### 19 Mapping
+### 19 显示设置Mapping
+
+PUT index_name
+{ mappings:{properties:{fileName:{type:"",index:false}}} }
+- null 处理？
+- copyto
+- 数组
 
 ### 20 多字段特性 使用自定义 Analyzer
 
 ### 21 index Template 和 Dynamic Template
+
+- index Template 是用在索引上的，对某类索引做设定
+- Dynamic Template 用在具体某个索引上，对某类属性做设定
 
 ### 22 Elasticsearch 聚合简析
 
@@ -188,7 +243,10 @@ analyzer
 
 ## TODO
 
+- 自动生成的ID，有助于做范围查询吗？  
+  主要是考虑到是否采用 B 树策略  
 - 副本故障是 yellow ，master故障是不是会自动切换？ 中间会有数据丢失吗？
 - 副本同步会有延迟吗？
-- 故障节点恢复之后会自动追回丢失的数据吗？
-- 7.0 是如何避免脑裂的呢？
+- 故障节点恢复之后会自动恢复故障期间丢失的数据吗？如果会，那么这个恢复过程会是不可用的状态吧。  
+- 7.0 是如何避免脑裂的呢？  
+- ingest 节点是个什么节点  https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html
