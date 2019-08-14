@@ -69,9 +69,11 @@ Beats: Collect, Parse, and Ship
 
 ## 参考
 
+https://www.elastic.co/guide/index.html  
 https://www.elastic.co/guide/en/logstash/current/index.html  
 https://www.elastic.co/cn/products  
 https://www.elastic.co/start  
+https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/_maven_repository.html  
 
 ### FAQ
 
@@ -86,4 +88,3 @@ https://www.elastic.co/start
   https://www.jianshu.com/p/2d86eafc3e94  
 6. unicode 编码
   https://www.jianshu.com/p/2d86eafc3e94  
-7. 
